@@ -1,12 +1,19 @@
 import "assets/css/app.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "pages/HomePage";
+import Clients from "parts/Clients";
+import Sitemap from "parts/Sitemap";
 
 function App() {
   return (
     <div className="App">
-      <h1 className="text-xl font-bold">Hero</h1>
-      <button className="bg-blue-500 text-white font-medium px-8 py-3 rounded-md hover:bg-blue-700 duration-500">
-        SUBMIT
-      </button>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </Router>
+      <Clients />
+      <Sitemap />
     </div>
   );
 }
